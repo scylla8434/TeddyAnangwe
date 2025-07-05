@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { 
   Mail, Phone, Github, ExternalLink, MapPin, Calendar, Award, Code, Server, Database, Shield, 
   Monitor, Users, BookOpen, Heart, Download, Star, Zap, ChevronDown, X, Eye, ArrowUp,
-  Briefcase, GraduationCap, Trophy, Rocket, Coffee, Smartphone, Globe, Lock, Wifi, 
+  Briefcase, GraduationCap, Trophy, Rocket, Coffee, Smartphone, Globe, Lock, Wifi, Laptop, 
   Cloud, Terminal, FileCode, GitBranch, Palette
 } from 'lucide-react';
 import './Portfolio.css';
@@ -1278,10 +1278,10 @@ const Portfolio = () => {
             </a>
           </div>
           <p className="footer-text">
-            © 2025 Teddy Anangwe. Built with passion using React and modern web technologies.
+            © 2025 Teddy Anangwe. Built with passion and love.
           </p>
           <div className="footer-fun">
-            <Coffee size={16} />
+            <Laptop size={16} />
             <span>Scylla8434</span>
           </div>
         </div>
