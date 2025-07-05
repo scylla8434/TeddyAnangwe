@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { 
   Mail, Phone, Github, ExternalLink, MapPin, Calendar, Award, Code, Server, Database, Shield, 
   Monitor, Users, BookOpen, Heart, Download, Star, Zap, ChevronDown, X, Eye, ArrowUp,
-  Briefcase, GraduationCap, Trophy, Rocket, Coffee, Smartphone, Globe, Lock, Wifi, Laptop, 
+  Briefcase, GraduationCap, Trophy, Rocket, Smartphone, Globe, Lock, Wifi, Laptop, 
   Cloud, Terminal, FileCode, GitBranch, Palette
 } from 'lucide-react';
 import './Portfolio.css';
