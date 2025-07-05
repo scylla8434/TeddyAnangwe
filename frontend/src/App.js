@@ -137,6 +137,20 @@ const Portfolio = () => {
     };
   }, []);
 
+  // Dynamic page title based on active section
+  useEffect(() => {
+    const sectionTitles = {
+      hero: 'Teddy Anangwe - Full Stack Developer',
+      about: 'About - Teddy Anangwe',
+      experience: 'Experience - Teddy Anangwe',
+      projects: 'Projects - Teddy Anangwe',
+      skills: 'Skills - Teddy Anangwe',
+      contact: 'Contact - Teddy Anangwe'
+    };
+    
+    document.title = sectionTitles[activeSection] || 'Teddy Anangwe - Portfolio';
+  }, [activeSection]);
+
   // Enhanced scroll animations - FIXED VERSION
   useEffect(() => {
     const handleScroll = () => {
@@ -1268,7 +1282,7 @@ const Portfolio = () => {
           </p>
           <div className="footer-fun">
             <Coffee size={16} />
-            <span>Powered by coffee and code</span>
+            <span>Scylla8434</span>
           </div>
         </div>
       </footer>
