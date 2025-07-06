@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useRef, useMemo } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';                        
 import { 
   Mail, Phone, Github, ExternalLink, MapPin, Calendar, Award, Code, Server, Database, Shield, 
   Monitor, Users, BookOpen, Heart, Download, Star, Zap, ChevronDown, X, Eye, ArrowUp,
-  Briefcase, GraduationCap, Trophy, Rocket, Smartphone, Globe, Lock, Wifi, Laptop, 
+  Briefcase, GraduationCap, Trophy, Rocket, Coffee, Smartphone, Globe, Lock, Wifi, 
   Cloud, Terminal, FileCode, GitBranch, Palette
 } from 'lucide-react';
 import './Portfolio.css';
@@ -13,6 +13,7 @@ const Portfolio = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   
   const heroRef = useRef(null);
   
@@ -177,6 +178,19 @@ const Portfolio = () => {
     handleScroll(); // Call once to set initial state
     return () => window.removeEventListener('scroll', handleScroll);
   }, [activeSection]);
+
+  // Mouse tracking for parallax effects
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      setMousePosition({
+        x: (e.clientX / window.innerWidth) * 100,
+        y: (e.clientY / window.innerHeight) * 100
+      });
+    };
+    
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
 
   // Loading simulation with progress - IMPROVED
   useEffect(() => {
@@ -534,6 +548,8 @@ const Portfolio = () => {
               <span className="nav-logo-icon">⚡</span>
               Teddy Anangwe
             </h1>
+            
+            {/* Desktop Navigation */}
             <div className="nav-links">
               {['About', 'Experience', 'Projects', 'Skills', 'Contact'].map((item) => (
                 <a
@@ -549,6 +565,39 @@ const Portfolio = () => {
                 </a>
               ))}
             </div>
+            
+            {/* Mobile Menu Button */}
+            <button 
+              className="mobile-menu-btn"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Toggle mobile menu"
+            >
+              <div className={`hamburger ${isMobileMenuOpen ? 'hamburger-open' : ''}`}>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </button>
+          </div>
+          
+          {/* Mobile Navigation Menu */}
+          <div className={`mobile-nav ${isMobileMenuOpen ? 'mobile-nav-open' : ''}`}>
+            {['About', 'Experience', 'Projects', 'Skills', 'Contact'].map((item) => (
+              <a
+                key={item}
+                href={`#${item.toLowerCase()}`}
+                className={`mobile-nav-link ${activeSection === item.toLowerCase() ? 'mobile-nav-link-active' : ''}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  setIsMobileMenuOpen(false);
+                  setTimeout(() => {
+                    document.getElementById(item.toLowerCase())?.scrollIntoView({ behavior: 'smooth' });
+                  }, 300);
+                }}
+              >
+                {item}
+              </a>
+            ))}
           </div>
         </div>
       </nav>
@@ -1278,11 +1327,11 @@ const Portfolio = () => {
             </a>
           </div>
           <p className="footer-text">
-            © 2025 Teddy Anangwe. Built with passion and love.
+            © 2025 Teddy Anangwe. Built with passion using React and modern web technologies.
           </p>
           <div className="footer-fun">
-            <Laptop size={16} />
-            <span>Scylla8434</span>
+            <Coffee size={16} />
+            <span>Powered by coffee and code</span>
           </div>
         </div>
       </footer>
