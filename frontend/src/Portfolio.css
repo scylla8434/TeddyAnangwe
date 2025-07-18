@@ -1320,6 +1320,18 @@ body {
   transform: translateY(-2px);
 }
 
+.project-link-live:hover, .project-link-live:focus {
+  background: linear-gradient(90deg, var(--green-400), var(--blue-500));
+  box-shadow: 0 0 32px 8px var(--green-400), 0 0 24px 4px var(--blue-400);
+  border-color: var(--green-400);
+}
+
+.project-link-github:hover, .project-link-github:focus {
+  background: linear-gradient(90deg, var(--yellow-400), var(--purple-500));
+  box-shadow: 0 0 32px 8px var(--yellow-400), 0 0 24px 4px var(--purple-400);
+  border-color: var(--yellow-400);
+}
+
 /* ===== PROJECT MODAL ===== */
 .modal-overlay {
   position: fixed;

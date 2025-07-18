@@ -2,8 +2,8 @@ import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { 
   Mail, Phone, Github, ExternalLink, MapPin, Calendar, Award, Code, Server, Database, Shield, 
   Monitor, Users, BookOpen, Heart, Download, Star, Zap, ChevronDown, X, Eye, ArrowUp,
-  Briefcase, GraduationCap, Trophy, Rocket, Coffee, Smartphone, Globe, Lock, Wifi, 
-  Cloud, Terminal, FileCode, GitBranch, Palette
+  Briefcase, GraduationCap, Trophy, Rocket,  Smartphone, Globe, Lock, Wifi, 
+  Cloud, Terminal, FileCode, GitBranch, Palette, Laptop
 } from 'lucide-react';
 import './Portfolio.css';
 
@@ -322,6 +322,15 @@ const Portfolio = () => {
   };
 
   const projects = [
+    {
+      title: "Home Work Helper For Busy Parents",
+      description: "A comprehensive AI enabled system built with modern web technologies, featuring real-time chat with AI and homework help.",
+      technologies: ["Angular 19", "JavaScript", "React", "SpringBoot"],
+      period: "March 2025 - April 2025",
+      type: "Full Stack Application",
+      liveLink: "https://eduedge.netlify.app", // You'll replace with actual links
+      githubLink: "https://github.com/scylla8434/homeworkHelper"
+    },
     {
       title: "Fintech Accounts & Transaction Management System",
       description: "A comprehensive financial management system built with modern web technologies, featuring real-time transaction processing and secure account management.",
@@ -752,7 +761,7 @@ const Portfolio = () => {
                   </div>
                   <div className="timeline-content">
                     <h4>2024</h4>
-                    <p>BSc. Computer Science - Upper Division</p>
+                    <p>BSc. Computer Science - Second Class Honours Upper Division</p>
                   </div>
                 </div>
                 <div className="timeline-item">
@@ -912,12 +921,36 @@ const Portfolio = () => {
       {/* Projects Section */}
       <section id="projects" className="section section-alt">
         <div className="container">
-          <h2 className="section-title">
+          <h2 className="section-title" data-animate>
             Featured Projects
           </h2>
           <div className="projects-grid">
             {projects.map((project, index) => (
-              <div key={index} className="project-card">
+              <div key={index} className="project-card" data-animate>
+                <div className="project-image">
+                  <img 
+                    src={`/images/projects/${project.title.toLowerCase().replace(/\s+/g, '-')}-preview.jpg`}
+                    alt={project.title}
+                    className="project-img"
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                      e.target.nextSibling.style.display = 'flex';
+                    }}
+                  />
+                  <div className="project-img-placeholder">
+                    <Monitor size={48} />
+                  </div>
+                  <div className="project-overlay">
+                    <button 
+                      className="project-preview-btn"
+                      onClick={() => openProjectModal(project)}
+                    >
+                      <Eye size={20} />
+                      Quick View
+                    </button>
+                  </div>
+                </div>
+                
                 <div className="project-content">
                   <div className="project-header">
                     <h3 className="project-title">{project.title}</h3>
@@ -925,23 +958,28 @@ const Portfolio = () => {
                       {project.type}
                     </span>
                   </div>
+                  
                   <p className="project-description">{project.description}</p>
+                  
                   <div className="project-technologies">
                     {project.technologies.map((tech, i) => (
                       <span key={i} className="project-tech">
+                        {techIcons[tech] || <Code className="tech-icon-small" />}
                         {tech}
                       </span>
                     ))}
                   </div>
+                  
                   <p className="project-period">{project.period}</p>
+                  
                   <div className="project-links">
-                    <a href={project.liveLink} className="project-link">
+                    <a href={project.liveLink} className="project-link project-link-live">
                       <ExternalLink size={16} />
                       Live Demo
                     </a>
                     <a href={project.githubLink} className="project-link project-link-github">
                       <Github size={16} />
-                      Code
+                      Source Code
                     </a>
                   </div>
                 </div>
@@ -1061,77 +1099,6 @@ const Portfolio = () => {
                 ))}
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Projects Section */}
-      <section id="projects" className="section section-alt">
-        <div className="container">
-          <h2 className="section-title" data-animate>
-            Featured Projects
-          </h2>
-          <div className="projects-grid">
-            {projects.map((project, index) => (
-              <div key={index} className="project-card" data-animate>
-                <div className="project-image">
-                  <img 
-                    src={`/images/projects/${project.title.toLowerCase().replace(/\s+/g, '-')}-preview.jpg`}
-                    alt={project.title}
-                    className="project-img"
-                    onError={(e) => {
-                      e.target.style.display = 'none';
-                      e.target.nextSibling.style.display = 'flex';
-                    }}
-                  />
-                  <div className="project-img-placeholder">
-                    <Monitor size={48} />
-                  </div>
-                  <div className="project-overlay">
-                    <button 
-                      className="project-preview-btn"
-                      onClick={() => openProjectModal(project)}
-                    >
-                      <Eye size={20} />
-                      Quick View
-                    </button>
-                  </div>
-                </div>
-                
-                <div className="project-content">
-                  <div className="project-header">
-                    <h3 className="project-title">{project.title}</h3>
-                    <span className="project-type">
-                      {project.type}
-                    </span>
-                  </div>
-                  
-                  <p className="project-description">{project.description}</p>
-                  
-                  <div className="project-technologies">
-                    {project.technologies.map((tech, i) => (
-                      <span key={i} className="project-tech">
-                        {techIcons[tech] || <Code className="tech-icon-small" />}
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                  
-                  <p className="project-period">{project.period}</p>
-                  
-                  <div className="project-links">
-                    <a href={project.liveLink} className="project-link project-link-live">
-                      <ExternalLink size={16} />
-                      Live Demo
-                    </a>
-                    <a href={project.githubLink} className="project-link project-link-github">
-                      <Github size={16} />
-                      Source Code
-                    </a>
-                  </div>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </section>
@@ -1327,11 +1294,11 @@ const Portfolio = () => {
             </a>
           </div>
           <p className="footer-text">
-            © 2025 Teddy Anangwe. Built with passion using React and modern web technologies.
+            © 2025 Teddy Anangwe.
           </p>
           <div className="footer-fun">
-            <Coffee size={16} />
-            <span>Powered by coffee and code</span>
+            <Laptop size={16} />
+            <span>Powered by Passion</span>
           </div>
         </div>
       </footer>
