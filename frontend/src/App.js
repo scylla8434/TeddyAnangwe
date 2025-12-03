@@ -704,7 +704,7 @@ const Portfolio = () => {
                 <Eye size={20} />
                 View My Work
               </a>
-              <a href="/resume/teddy-anangwe-resume.pdf" className="btn btn-outline btn-animated" download>
+              <a href="/resume/teddy_anangwe.pdf" className="btn btn-outline btn-animated" download>
                 <Download size={20} />
                 Download Resume
               </a>
