@@ -20,10 +20,10 @@ const Portfolio = () => {
   // Memoize titles array to prevent useEffect dependency issues
   const titles = useMemo(() => [
     "Full Stack Developer",
-    "Cybersecurity Specialist", 
-    "Cloud Computing Expert",
-    "Software Engineer",
-    "Network Security Analyst"
+    "Software Developer",
+    "Frontend Specialist",
+    "Backend Developer",
+    "Cybersecurity Enthusiast"
   ], []);
   
   const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
@@ -306,6 +306,8 @@ const Portfolio = () => {
     'HTML5': <Globe className="tech-icon" />,
     'CSS3': <Palette className="tech-icon" />,
     'SpringBoot': <Server className="tech-icon" />,
+    'Java': <FileCode className="tech-icon" />,
+    'jQuery': <Code className="tech-icon" />,
     'Laravel': <Code className="tech-icon" />,
     'Node.js': <Server className="tech-icon" />,
     'PHP': <FileCode className="tech-icon" />,
@@ -313,6 +315,7 @@ const Portfolio = () => {
     'MySQL': <Database className="tech-icon" />,
     'PostgreSQL': <Database className="tech-icon" />,
     'MongoDB': <Database className="tech-icon" />,
+    'Oracle': <Database className="tech-icon" />,
     'Git': <GitBranch className="tech-icon" />,
     'MS Azure': <Cloud className="tech-icon" />,
     'Penetration Testing': <Shield className="tech-icon" />,
@@ -323,120 +326,99 @@ const Portfolio = () => {
 
   const projects = [
     {
-      title: "Home Work Helper For Busy Parents",
-      description: "A comprehensive AI enabled system built with modern web technologies, featuring real-time chat with AI and homework help.",
-      technologies: ["Angular 19", "JavaScript", "React", "SpringBoot"],
-      period: "March 2025 - April 2025",
-      type: "Full Stack Application",
-      liveLink: "https://eduedge.netlify.app", // You'll replace with actual links
-      githubLink: "https://github.com/scylla8434/homeworkHelper"
-    },
-    {
-      title: "Fintech Accounts & Transaction Management System",
-      description: "A comprehensive financial management system built with modern web technologies, featuring real-time transaction processing and secure account management.",
-      technologies: ["Angular 19", "JavaScript", "React", "SpringBoot"],
-      period: "January 2025 - February 2025",
-      type: "Full Stack Application",
-      liveLink: "#", // You'll replace with actual links
-      githubLink: "#"
-    },
-    {
-      title: "Loan Management System",
-      description: "Advanced loan processing and management platform with automated approval workflows and comprehensive reporting capabilities.",
-      technologies: ["Angular 19", "JavaScript", "React", "SpringBoot"],
-      period: "February 2025 - March 2025",
+      title: "ABSA Bancassurance",
+      description: "A comprehensive system that looks to automate operational processes for bancassurance operations to achieve significant productivity improvement and minimise human intervention.",
+      technologies: ["Java", "jQuery", "Bootstrap", "PostgreSQL", "JavaScript"],
+      period: "April 2025",
       type: "Enterprise Solution",
       liveLink: "#",
       githubLink: "#"
     },
     {
-      title: "eSecurity System",
-      description: "Robust security management platform with real-time monitoring, vulnerability assessment capabilities, and comprehensive reporting.",
-      technologies: ["ReactJs", "MySQL", "Spring Boot", "Git", "Trello", "MS Azure"],
-      period: "January 2023 - March 2023",
-      type: "Security Platform",
+      title: "Fintech Accounts and Transaction Management System",
+      description: "An integrated system that uses modern frameworks to automate the processes involved in loan management for fintech.",
+      technologies: ["Angular", "Node.js", "PostgreSQL", "Bootstrap"],
+      period: "February 2025",
+      type: "Full Stack Application",
       liveLink: "#",
       githubLink: "#"
     },
     {
-      title: "House Rental System",
-      description: "Modern property management solution featuring property listings, tenant management, and automated rental processes.",
-      technologies: ["HTML", "CSS", "JavaScript", "React", "Node.js"],
-      period: "April 2023 - June 2023",
-      type: "Web Application",
-      liveLink: "#",
-      githubLink: "#"
-    },
-    {
-      title: "eShopping Portal",
-      description: "Full-featured e-commerce platform with secure payment processing, inventory management, and user-friendly shopping experience.",
-      technologies: ["PHP", "Laravel", "MySQL", "Bootstrap"],
-      period: "July 2021 - September 2021",
-      type: "E-commerce Platform",
-      liveLink: "#",
-      githubLink: "#"
+      title: "Eduegde (Homework Helper)",
+      description: "A comprehensive modern system that employs AI prompts to help busy parents with their children's homework.",
+      technologies: ["Angular", "Node.js", "MongoDB", "Bootstrap"],
+      period: "November 2024",
+      type: "AI-Powered Application",
+      liveLink: "https://eduedge.netlify.app",
+      githubLink: "https://github.com/scylla8434/homeworkHelper"
     }
   ];
 
   const experiences = [
     {
-      title: "Software Developer",
-      company: "E&M TECH",
-      location: "Tatu City, Nairobi",
-      period: "2025 - Present",
+      title: "Full Stack Software Developer",
+      company: "E&M TECHNOLOGY HOUSE",
+      location: "Nairobi, Kenya",
+      period: "April 2025 - Present",
       type: "Full-time",
       responsibilities: [
-        "Frontend software development using ReactJs, Angular, and TypeScript",
-        "Backend software development with SpringBoot",
-        "Network troubleshooting and system optimization",
-        "Building scalable web applications for enterprise clients"
+        "Conducted full-stack software development for Bancassurance platform using Java and jQuery",
+        "Integrated RESTful APIs to enhance application functionality and user experience",
+        "Developed front-end components with Next.js, Tailwind, React.js, and jQuery",
+        "Implemented unit tests to boost code reliability and minimize production bugs",
+        "Optimized application architecture for improved scalability and performance",
+        "Collaborated with cross-functional teams to design effective user interfaces",
+        "Participated in Agile processes, contributing to sprint planning and daily stand-ups",
+        "Reviewed code to ensure the quality and maintainability of software components"
       ]
     },
     {
-      title: "Trainee - Full Stack Software Development",
-      company: "Cyber Shujaa",
-      location: "Nairobi",
-      period: "2023 - 2024",
-      type: "Training Program",
+      title: "ICT Instructor",
+      company: "Highridge International",
+      location: "Nairobi, Kenya",
+      period: "June 2025 - November 2025",
+      type: "Full-time",
       responsibilities: [
-        "Intensive training in full-stack development",
-        "Penetration testing and cybersecurity practices",
-        "Cloud and network security implementation",
-        "VAPT (Vulnerability Assessment and Penetration Testing)"
+        "Created instructional materials for IT courses at Highridge International",
+        "Delivered engaging lectures on software development and programming concepts",
+        "Mentored students in project development and effective problem-solving techniques",
+        "Updated course content to align with current industry trends and technologies"
       ]
     },
     {
-      title: "IT Assistant Intern",
-      company: "Computer Ways",
-      location: "Mfangano St., Nairobi",
-      period: "2023 - 2024",
+      title: "Software Developer Intern",
+      company: "E&M TECHNOLOGY HOUSE",
+      location: "Nairobi, Kenya",
+      period: "January 2025 - April 2025",
       type: "Internship",
       responsibilities: [
-        "Frontend development with ReactJS and Angular",
-        "Software installation and system maintenance",
-        "CCTV installation and network configuration",
-        "Technical support and troubleshooting"
+        "Designed user-friendly web interfaces using ReactJS, Angular, and TypeScript",
+        "Built backend applications with Java Spring Boot to ensure efficient data processing",
+        "Developed and tested software applications leveraging Java Spring Boot for robustness",
+        "Integrated third-party APIs to enhance application functionality and improve user experience",
+        "Collaborated on design, coding, and debugging tasks with team members to optimize outcomes"
       ]
     },
     {
       title: "Intern",
-      company: "Kenya Airports Authority, JKIA",
-      location: "Nairobi",
-      period: "2022",
+      company: "Computer Ways",
+      location: "Nairobi, Kenya",
+      period: "May 2023 - August 2023",
       type: "Internship",
       responsibilities: [
-        "Network troubleshooting and mitigation",
-        "Fibre cable laying and termination",
-        "Network and CCTV switch configuration",
-        "General preventive maintenance"
+        "Developed backend systems using PHP, MySQL, PostgreSQL, MongoDB, and Oracle",
+        "Executed frontend software development projects utilizing ReactJS",
+        "Installed and configured software packages, including Windows and Microsoft Office",
+        "Performed CCTV installation to enhance security measures",
+        "Configured networks while ensuring general preventive maintenance for optimal performance"
       ]
     }
   ];
 
   const skills = {
-    frontend: ["ReactJs", "Angular", "TypeScript", "HTML5", "CSS3", "JavaScript", "Bootstrap"],
-    backend: ["SpringBoot", "Laravel", "Node.js", "PHP", "Python"],
-    database: ["MySQL", "PostgreSQL", "MongoDB"],
+    frontend: ["ReactJs", "Angular", "TypeScript", "JavaScript", "HTML5", "CSS3", "jQuery", "Bootstrap"],
+    backend: ["Java", "SpringBoot", "Node.js", "PHP", "Laravel", "Python"],
+    database: ["MySQL", "PostgreSQL", "MongoDB", "Oracle"],
     tools: ["Git", "Trello", "MS Azure", "Adobe Illustrator", "Canva"],
     security: ["Penetration Testing", "VAPT", "Network Security", "Cybersecurity Essentials"]
   };
@@ -665,30 +647,31 @@ const Portfolio = () => {
               </div>
               
               <p className="hero-description">
-                A motivated and results-driven tech enthusiast with a strong foundation in software development, 
-                cybersecurity, and cloud computing. Passionate about leveraging technical skills and innovative 
-                solutions to drive organizational success.
+                Full Stack Software Developer specialising in Front-end Development, API integration, and
+                Database management. Demonstrated success in improving application performance and scalability
+                within Agile frameworks. Delivers high-quality solutions through rigorous software testing and
+                effective problem-solving strategies.
               </p>
               
               <div className="hero-stats">
                 <div className="hero-stat">
                   <Trophy className="stat-icon" />
                   <div className="stat-content">
-                    <span className="stat-number">5+</span>
+                    <span className="stat-number">3+</span>
                     <span className="stat-label">Projects</span>
                   </div>
                 </div>
                 <div className="hero-stat">
                   <Briefcase className="stat-icon" />
                   <div className="stat-content">
-                    <span className="stat-number">3+</span>
+                    <span className="stat-number">2+</span>
                     <span className="stat-label">Years Experience</span>
                   </div>
                 </div>
                 <div className="hero-stat">
                   <GraduationCap className="stat-icon" />
                   <div className="stat-content">
-                    <span className="stat-number">10+</span>
+                    <span className="stat-number">4+</span>
                     <span className="stat-label">Certifications</span>
                   </div>
                 </div>
@@ -727,22 +710,24 @@ const Portfolio = () => {
           </h2>
           <div className="about-grid">
             <div className="about-text" data-animate>
-              <h3 className="about-subtitle">From Network Infrastructure to Software Innovation</h3>
+              <h3 className="about-subtitle">From Foundation to Innovation</h3>
               <p className="about-paragraph">
-                My journey began at Kenya Airports Authority where I gained hands-on experience with network infrastructure, 
-                laying the foundation for my technical expertise. This experience taught me the importance of robust, 
-                reliable systems and attention to detail.
+                My journey in software development began with intensive training at Cyber Shujaa, where I mastered
+                full-stack development and cybersecurity practices. This foundation prepared me to tackle real-world
+                challenges in software engineering and security implementation.
               </p>
               <p className="about-paragraph">
-                Transitioning into software development, I've mastered both frontend and backend technologies, 
-                specializing in creating scalable web applications and implementing security-first solutions. 
-                My unique background in networking gives me a comprehensive understanding of how applications 
-                interact with infrastructure.
+                Starting as an intern at Computer Ways, I gained practical experience developing backend systems
+                with PHP, MySQL, PostgreSQL, MongoDB, and Oracle, while also working on frontend projects using ReactJS.
+                This hands-on experience solidified my understanding of full-stack development and taught me the
+                importance of building robust, scalable solutions.
               </p>
               <p className="about-paragraph">
-                Today, I combine my technical expertise with a passion for innovation, building solutions that 
-                not only meet business requirements but also contribute to meaningful social impact through 
-                volunteer work and community engagement.
+                Today at E&M Technology House, I specialize in full-stack software development for enterprise
+                Bancassurance platforms, integrating RESTful APIs, optimizing application architecture, and
+                delivering high-quality solutions through Agile methodologies. Beyond my technical work, I'm
+                passionate about giving back to the community as a proud member of the Generous Givers Family,
+                supporting disadvantaged and vulnerable children.
               </p>
               
               <div className="journey-timeline" data-animate>
@@ -751,8 +736,8 @@ const Portfolio = () => {
                     <Briefcase size={20} />
                   </div>
                   <div className="timeline-content">
-                    <h4>2025 - Present</h4>
-                    <p>Software Developer at E&M TECH</p>
+                    <h4>April 2025 - Present</h4>
+                    <p>Full Stack Software Developer at E&M Technology House</p>
                   </div>
                 </div>
                 <div className="timeline-item">
@@ -760,7 +745,7 @@ const Portfolio = () => {
                     <GraduationCap size={20} />
                   </div>
                   <div className="timeline-content">
-                    <h4>2024</h4>
+                    <h4>2018 - 2024</h4>
                     <p>BSc. Computer Science - Second Class Honours Upper Division</p>
                   </div>
                 </div>
@@ -769,8 +754,8 @@ const Portfolio = () => {
                     <Shield size={20} />
                   </div>
                   <div className="timeline-content">
-                    <h4>2023-2024</h4>
-                    <p>Full Stack Development Training</p>
+                    <h4>2023 - 2024</h4>
+                    <p>Cloud and Network Security - Cyber Shujaa</p>
                   </div>
                 </div>
               </div>
@@ -793,12 +778,12 @@ const Portfolio = () => {
               <div className="about-card about-card-animated">
                 <Award className="about-card-icon about-card-icon-purple" size={32} />
                 <h4 className="about-card-title">Certifications</h4>
-                <p className="about-card-text">Cloud and Network Security</p>
-                <p className="about-card-subtext">Cybersecurity Essentials</p>
+                <p className="about-card-text">PLP Software Development</p>
+                <p className="about-card-subtext">Cloud and Network Security</p>
                 <div className="about-card-stats">
                   <div className="about-stat">
                     <Star size={16} />
-                    <span>10+ Certificates</span>
+                    <span>4+ Certificates</span>
                   </div>
                 </div>
               </div>
@@ -806,12 +791,12 @@ const Portfolio = () => {
               <div className="about-card about-card-animated">
                 <Heart className="about-card-icon about-card-icon-pink" size={32} />
                 <h4 className="about-card-title">Community Impact</h4>
-                <p className="about-card-text">Volunteer at thisIT</p>
-                <p className="about-card-subtext">Supporting underprivileged students</p>
+                <p className="about-card-text">Generous Givers Family</p>
+                <p className="about-card-subtext">Supporting disadvantaged and vulnerable children</p>
                 <div className="about-card-stats">
                   <div className="about-stat">
                     <Users size={16} />
-                    <span>100+ Lives Impacted</span>
+                    <span>Making a Difference</span>
                   </div>
                 </div>
               </div>
@@ -1232,7 +1217,7 @@ const Portfolio = () => {
                   </button>
                 </div>
                 
-                <a href="https://github.com/Scylla8434" className="contact-method">
+                <a href="https://github.com/scylla34" className="contact-method">
                   <Github size={20} />
                   Scylla8434
                 </a>
